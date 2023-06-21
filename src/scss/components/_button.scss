@@ -1,0 +1,37 @@
+.button{
+    font-family: 'Ubuntu', Arial;
+    font-weight: 700;   
+    font-size: 2rem;
+    width: 100%;
+    background-color: var(--clr-dark);
+    border: none;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-around;
+    letter-spacing: .2rem;
+    align-items: center;
+    padding: 1.6rem 3.2rem;
+    box-shadow: var(--box-shadow-sm);
+    margin-bottom: 4rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+    color: var(--clr-white);
+
+    &:hover{
+        background-color: lighten($color: #000000, $amount: 8%);
+    }
+
+    &:active{
+        background-color: lighten($color: #000000, $amount: 16%);
+        transform: scale(.99);
+    }
+
+    &:disabled{
+        background-color: lighten($color: #000000, $amount: 40%);
+    }
+
+    &:focus{
+        outline: none;
+    }
+}
