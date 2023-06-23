@@ -46,7 +46,7 @@ export default {
                 return
             }
             try {
-                const token = this.$router.currentRoute.value.params.id
+                const token = this.$router.currentRoute.value.params.token
                 const data = await authApi.put('/auth/reset-password', {resetLink: token, newPass: this.password})
                 if(!data.data.success){
                     this.setMessage({type: 'alert', message: data.data.message})

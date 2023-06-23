@@ -19,12 +19,12 @@ export default {
         },
         {
             name: 'ResetPassView',
-            path: 'resetpass/:id',
+            path: '/resetpass/:token',
             component: () => import(/* webpackChunkName: "resetPassView" */ '../views/ResetPassView.vue'),
         },
         {
             name: 'ActivateMailView',
-            path: 'activate/:token',
+            path: '/activate/:token',
             component: () => import(/* webpackChunkName: "activateMailView" */ '../views/ActivateMailView.vue'),
         }
     ]
