@@ -17,9 +17,7 @@ export default {
 
         async activateMail() {
             try{
-                console.log(this.$router.currentRoute.value.params.token)
                 const data = await authApi.put('/auth/email-activate', {token: this.$router.currentRoute.value.params.token})
-                console.log("🚀 ~ file: ActivateMailView.vue:21 ~ activateMail ~ data:", data)
                 if(!data.data.success){
                     this.setMessage({type: 'alert', message: data.data.message})
                     this.$router.push({name: 'SigninView'})

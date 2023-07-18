@@ -19,6 +19,12 @@ import { mapMutations } from 'vuex'
 
 export default {
     name: 'ResetPassView',
+    props: {
+        id: {
+            type: String,
+            required: true
+        }
+    },
     data() {
         return {
             password: '',
@@ -30,6 +36,9 @@ export default {
     },
     components: {
         Message
+    },
+    created(){
+        console.log(this.$router.currentRoute.value.params.token)
     },
     methods: {
         ...mapMutations('ui', ['setMessage']),
@@ -47,6 +56,7 @@ export default {
             }
             try {
                 const token = this.$router.currentRoute.value.params.token
+                console.log(token)
                 const data = await authApi.put('/auth/reset-password', {resetLink: token, newPass: this.password})
                 if(!data.data.success){
                     this.setMessage({type: 'alert', message: data.data.message})
