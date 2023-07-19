@@ -25,7 +25,7 @@ export default {
             event.target.style.animationDuration = '1s'
             setTimeout(() => {
                 this.cleanMessage()
-            }, 1000)
+            }, 888)
         },
 
     },
